@@ -22,7 +22,7 @@ It's based on the [http-log](https://docs.konghq.com/hub/kong-inc/http-log/) plu
     - `Azure Primary Key`: put the `Primary key` value copied on previous steps
     - `Azure Log Type`: feel free changing the value. It's the table name in the Analytics Workspace and the default value is `kong_DP_CL` (for Kong Data Plane Custom Log)
 5) Click on Save
-6) Apply load on the Kong Gateway (i.e. request APIs via the Kong Gateway route)
+6) Apply load on the Kong Gateway (i.e. request some APIs via the Kong Gateway route)
 
 **Azure can take a long time creating the 1st log in the Analytics Workspace.** It took 10 minutes on my side. After the 1st creation log, other logs appear almost in real time.
 
