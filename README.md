@@ -1,4 +1,7 @@
-# Kong plugin: send logs to Azure Log Analytics Workspace (as the [http-log](https://docs.konghq.com/hub/kong-inc/http-log/) plugin)
+# Kong plugin: send logs to Azure Log Analytics Workspace 
+This plugin sends Kong log data to Log Analytics with the [HTTP Data Collector API](https://learn.microsoft.com/en-us/rest/api/loganalytics/create-request).
+
+It's based on the [http-log](https://docs.konghq.com/hub/kong-inc/http-log/) plugin capacity.
 
 ## How create an Azure Log Analytics Workspace
 1) Sign in to Azure Portal, [here](https://portal.azure.com/)
@@ -42,7 +45,7 @@ As explained by Microsoft, Azure Monitor appends suffix depending on the propert
     - `_s` for String
     - `_d` for Double
     - etc.
-    
+
 [See Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collector-api?tabs=powershell#record-type-and-properties)
 
 ## Data privacy
@@ -62,3 +65,6 @@ See the expected configuration:
 6) Apply load on the Kong Gateway by passing an `apikey` HTTP header
 7) Go on Azure page, execute the Query and see the column `request.headers.apikey_s`
 ![Alt text](/images/5-dataPrivacy-azure-log-analytics-result.png "Data privacy result")
+
+## Advanced configuration
+For other properties like retry, timeout, batch size, ... see [http-log](https://docs.konghq.com/hub/kong-inc/http-log/configuration/) plugin configuration
