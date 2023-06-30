@@ -46,13 +46,13 @@ As explained by Microsoft, Azure Monitor appends suffix depending on the propert
 
 ## Data privacy
 You can configure the plugin to avoid sending private data, private key, etc.
-Let's consider the Consumer calls an API via Kong with an HTTP header `apikey`
+Let's consider the Consumer calls an API via Kong with an `apikey` HTTP header
 1) Open the plugins page on Kong Enterprise or Konnect
 2) Edit the `azure-log-analytics` plugin
 3) Set a new property in `Custom Fields By Lua` with value `request.headers.apikey`
 4) Click on `+ Add config.custom_fiels_by_lua`and set the value ```return "***blocked by Kong logging plugin***"```
 ![Alt text](/images/4-dataPrivacy-azure-log-analytics-plugin.png "Data privacy configuration")
 5) Click on Save
-6) Apply load on the Kong Gateway by passing an HTTP header `apikey`
+6) Apply load on the Kong Gateway by passing an `apikey` HTTP header
 7) Go on Azure page, execute the Query and see the column `request.headers.apikey_s`
 ![Alt text](/images/5-dataPrivacy-azure-log-analytics-result.png "Data privacy result")
