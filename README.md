@@ -42,6 +42,7 @@ As explained by Microsoft, Azure Monitor appends suffix depending on the propert
     - `_s` for String
     - `_d` for Double
     - etc.
+    
 [See Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collector-api?tabs=powershell#record-type-and-properties)
 
 ## Data privacy
