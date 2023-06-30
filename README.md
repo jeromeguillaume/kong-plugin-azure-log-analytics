@@ -39,7 +39,7 @@ kong_DP_CL
 Example of logs sent by Kong:
 ![Alt text](/images/2-Azure-Log-Analytics-run-query.png "Query on kong_DP_CL")
 Kong log detail below. For instance, we easily retrieve the Consumer's request via Kong GW (`request_url_s`) or Consumer's IP address (`client_ip_s`).
-The documentation of all Kong log properties is [here](https://docs.konghq.com/hub/kong-inc/http-log/#json-object-considerations):
+The documentation of all Kong log properties is [here](https://docs.konghq.com/hub/kong-inc/http-log/#json-object-considerations).
 ![Alt text](/images/3-Azure-Log-Analytics-run-query.png "Query on kong_DP_CL")
 As explained by Microsoft, Azure Monitor appends suffix depending on the property data type:
     - `_s` for String
