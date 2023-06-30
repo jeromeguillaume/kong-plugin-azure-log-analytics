@@ -1,4 +1,4 @@
-# Kong plugin: send logs to Azure Log Analytics Workspace (as the `http-log` plugin)
+# Kong plugin: send logs to Azure Log Analytics Workspace (as the [http-log](https://docs.konghq.com/hub/kong-inc/http-log/) plugin)
 
 ## How create an Azure Log Analytics Workspace
 1) Sign in to Azure Portal, [here](https://portal.azure.com/)
@@ -23,7 +23,7 @@ Feel free changing `Azure Log Type`: it's the table name in the Analytics Worksp
 
 **Azure can take a long time creating the 1st log in the Analytics Workspace.** It took 10 minutes on my side. After the 1st creation log, other logs appear in real time.
 
-## How access to Kong Gateway logs in `kong-log-analytics-ws`
+## How access to Kong Gateway logs in the Log Analytics Workspace
 1) Open the `kong-log-analytics-ws` Azure Analytics Workspace
 2) Click on `Logs` menu on the left
 3) Close the popup `Queries` window
