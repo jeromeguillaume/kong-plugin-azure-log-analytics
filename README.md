@@ -54,7 +54,7 @@ Let's consider a Consumer calling an API via Kong with an `apikey` HTTP header.
 1) Open the plugins page on Kong Enterprise or Konnect
 2) Edit the `azure-log-analytics` plugin
 3) Set a new property in `Custom Fields By Lua` with value `request.headers.apikey`
-4) Click on `+ Add config.custom_fiels_by_lua`and set the following value:
+4) Click on `+ Add config.custom_fiels_by_lua` and set the following value:
 ```Lua
 return "***blocked by Kong logging plugin***"
 ```
