@@ -1,5 +1,5 @@
-# Kong plugin: send Kong log data to Azure Log Analytics Workspace 
-This plugin sends Kong log data to Log Analytics with the [HTTP Data Collector API](https://learn.microsoft.com/en-us/rest/api/loganalytics/create-request).
+# Kong plugin: send Kong log data to Azure Log Analytics 
+This plugin sends Kong log data to Azure Log Analytics  with the [HTTP Data Collector API](https://learn.microsoft.com/en-us/rest/api/loganalytics/create-request).
 
 It's based on the [http-log](https://docs.konghq.com/hub/kong-inc/http-log/) plugin capacity.
 
