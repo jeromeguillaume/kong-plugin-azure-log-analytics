@@ -80,7 +80,6 @@ function azureBuildSignature(method, content_type, azureWorkspaceId, azurePrimar
                           content_type .. '\n' .. 
                           'x-ms-date:' .. xMsDate .. '\n' .. 
                           azureResource
-  kong.log.notice("signingString: " .. signingString)
   local hmac = openssl_hmac.new(azurePrimaryKey_decoded_base64, "sha256"):final(signingString)
   local encode_base64 = ngx.encode_base64
   local encodedHmacHash = encode_base64 (hmac)
@@ -279,7 +278,6 @@ function AzureLogAnalytics:log(conf)
   local queue_conf = Queue.get_plugin_params("azure-log-analytics", conf, make_queue_name(conf))
   kong.log.debug("Queue name automatically configured based on configuration parameters to: ", queue_conf.name)
 
-  kong.log.notice("Queue name automatically configured based on configuration parameters to: ", queue_conf.name)
   local ok, err = Queue.enqueue(
     queue_conf,
     send_entries,
