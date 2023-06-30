@@ -35,8 +35,8 @@ It's based on the [http-log](https://docs.konghq.com/hub/kong-inc/http-log/) plu
 kong_DP_CL
 | order by TimeGenerated
 ```
-5) Click on `Run`
-Example of logs sent by Kong
+5) Click on `Run`. 
+Example of logs sent by Kong:
 ![Alt text](/images/2-Azure-Log-Analytics-run-query.png "Query on kong_DP_CL")
 Kong log detail below. For instance, we easily retrieve the Consumer's request via Kong GW (`request_url_s`) or Consumer's IP address (`client_ip_s`).
 The documentation of all Kong log properties is [here](https://docs.konghq.com/hub/kong-inc/http-log/#json-object-considerations):
