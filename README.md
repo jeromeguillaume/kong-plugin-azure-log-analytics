@@ -17,7 +17,7 @@ It's based on the [http-log](https://docs.konghq.com/hub/kong-inc/http-log/) plu
 3) Add the `azure-log-analytics` plugin at the Global / Service / Route level
 4) Configure at least these properties:
     - `Azure Http Endpoint`: replace <AZURE_WORKSPACE_ID> with the `Workspace ID` value copied on previous steps
-    - `Azure Primary Key`: put the Azure `Primary key` value copied on previous steps
+    - `Azure Primary Key`: put the `Primary key` value copied on previous steps
     - `Azure Log Type`: feel free changing the value. It's the table name in the Analytics Workspace and the default value is `kong_DP_CL` (for Kong Data Plane Custom Log)
 5) Click on Save
 6) Apply load on the Kong Gateway (i.e. request APIs via the Kong Gateway route)
