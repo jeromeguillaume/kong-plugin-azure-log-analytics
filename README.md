@@ -56,6 +56,7 @@ return "***blocked by Kong logging plugin***"
 ```
 See the expected configuration:
 ![Alt text](/images/4-dataPrivacy-azure-log-analytics-plugin.png "Data privacy configuration")
+
 5) Click on Save
 6) Apply load on the Kong Gateway by passing an `apikey` HTTP header
 7) Go on Azure page, execute the Query and see the column `request.headers.apikey_s`
