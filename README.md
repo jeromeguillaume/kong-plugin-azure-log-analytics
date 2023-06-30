@@ -66,5 +66,5 @@ See the expected configuration:
 7) Go on Azure page, execute the Query and see the column `request.headers.apikey_s`
 ![Alt text](/images/5-dataPrivacy-azure-log-analytics-result.png "Data privacy result")
 
-## Advanced configuration
+## Advanced configuration of `azure-log-analytics` plugin
 For other properties like retry, timeout, batch size, ... see [http-log](https://docs.konghq.com/hub/kong-inc/http-log/configuration/) plugin configuration
