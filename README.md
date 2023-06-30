@@ -3,7 +3,7 @@ This plugin sends Kong Gateway log data to Azure Log Analytics  with the [HTTP D
 
 It's based on the [http-log](https://docs.konghq.com/hub/kong-inc/http-log/) plugin capacity.
 
-[http-log](https://docs.konghq.com/hub/kong-inc/http-log/) plugin and this plugin can be configured simultaneously and work together.
+The [http-log](https://docs.konghq.com/hub/kong-inc/http-log/) plugin and this plugin can be configured simultaneously and work together.
 
 ## How to create an Azure Log Analytics Workspace
 1) Sign in to Azure Portal, [here](https://portal.azure.com/)
