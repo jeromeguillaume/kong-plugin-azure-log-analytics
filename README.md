@@ -1,0 +1,1 @@
+# Kong plugin: send logs to Azure Loag Analytics Workspace (as the `http-log` plugin)
