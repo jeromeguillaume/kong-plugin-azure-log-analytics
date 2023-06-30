@@ -11,16 +11,14 @@ It's based on the [http-log](https://docs.konghq.com/hub/kong-inc/http-log/) plu
 
 ![Alt text](/images/1-Azure-Log-Analytics-Workspace.png "Log Analytics Workspace")
 
-## How deploy the `azure-log-analytics`
+## How deploy the `azure-log-analytics` plugin
 1) Log in to Kong Enterprise or Konnect
 2) Open the plugins page
 3) Add the `azure-log-analytics` plugin at the Global / Service / Route level
 4) Configure at least these properties:
-`Azure Http Endpoint`
-https://<AZURE_WORKSPACE_ID>.ods.opinsights.azure.com
-`Azure Workspace Id`
-`Azure Primary Key`
-Feel free changing `Azure Log Type`: it's the table name in the Analytics Workspace and the default value is `kong_DP_CL` (for Kong Data Plane Custom Log)
+    - `Azure Http Endpoint`: replace <AZURE_WORKSPACE_ID> with the `Workspace ID` value copied on previous steps
+    - `Azure Primary Key`: put the Azure `Primary key` value copied on previous steps
+    - `Azure Log Type`: feel free changing the value. It's the table name in the Analytics Workspace and the default value is `kong_DP_CL` (for Kong Data Plane Custom Log)
 5) Click on Save
 6) Apply load on the Kong Gateway (i.e. request APIs via the Kong Gateway route)
 
@@ -38,7 +36,7 @@ kong_DP_CL
 5) Click on `Run`
 Example of logs sent by Kong
 ![Alt text](/images/2-Azure-Log-Analytics-run-query.png "Query on kong_DP_CL")
-Kong log detail below. For instance, we easily retrieve the Consumer request via Kong GW (`request_url_s`) or its IP address (`client_ip_s`).
+Kong log detail below. For instance, we easily retrieve the Consumer's request via Kong GW (`request_url_s`) or Consumer's IP address (`client_ip_s`).
 The documentation of all Kong log properties is [here](https://docs.konghq.com/hub/kong-inc/http-log/#json-object-considerations):
 ![Alt text](/images/3-Azure-Log-Analytics-run-query.png "Query on kong_DP_CL")
 As explained by Microsoft, Azure Monitor appends suffix depending on the property data type:

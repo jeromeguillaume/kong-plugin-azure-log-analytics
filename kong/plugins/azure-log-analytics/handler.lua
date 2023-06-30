@@ -181,9 +181,23 @@ local function send_entries(conf, entries)
   local curTime = os.time()
   local xMsDate = os.date('!%a, %d %b %Y %H:%M:%S GMT', curTime)
 
+  -- Extract from the Endpoint URL the Azure Workspace Id (1st part of Domain name)
+  -- Example: 
+  --  azure_http_endpoint = https://b5f9e1c0-724b-4c62-9296-b02c0f7b0d19.ods.opinsights.azure.com
+  --  azure_workspace_id = b5f9e1c0-724b-4c62-9296-b02c0f7b0d19
+  local azure_workspace_id
+  local b1, e1 = string.find(azure_http_endpoint, "://")
+  local b2, e2 = string.find(azure_http_endpoint, "%.", e1)
+  -- If we failed to find azure_workspace_id
+  if e1 == nil or b2 == nil then
+    kong.log.err ( "Unable to extract Azure Workspace Id on: " .. azure_http_endpoint )
+    return nil, "Unable to extract Azure Workspace Id on: " .. azure_http_endpoint
+  end
+  azure_workspace_id = string.sub(azure_http_endpoint, e1 + 1, b2 - 1)
+
   local httpc = http.new()
   httpc:set_timeout(timeout)
-  local azureSignature = azureBuildSignature (method, conf.content_type, conf.azure_workspace_id, conf.azure_primary_key, xMsDate, content_length, conf.azure_resource)
+  local azureSignature = azureBuildSignature (method, conf.content_type, azure_workspace_id, conf.azure_primary_key, xMsDate, content_length, conf.azure_resource)
   local headers = {
     ["Host"] = host,
     ["Content-Type"] = content_type,

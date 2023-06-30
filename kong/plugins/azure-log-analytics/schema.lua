@@ -15,7 +15,6 @@ return {
           { azure_log_type = { type = "string", required = true, default = "kong_DP_CL" }, },
           { azure_primary_key = { type = "string", required = true, encrypted = true}, },
           { azure_resource = { type = "string", required = true, default = "/api/logs" }, },
-          { azure_workspace_id = { type = "string", required = true }, },
           { method = { type = "string", default = "POST", one_of = { "POST" }, required = true }, },
           { content_type = { type = "string", default = "application/json", one_of = { "application/json"}, required = true }, },
           { timeout = { type = "number", default = 10000 }, },
